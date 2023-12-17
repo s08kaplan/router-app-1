@@ -60,7 +60,7 @@ const ProductCardDetail = () => {
         
 
     </div>) :
- `Loading`
+( <div>LOADING...</div> )
 }
 </>
   
