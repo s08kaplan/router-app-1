@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import NavBar from "../src/components/NavBar";
+import Home from "../src/Pages/Home";
+import Gallery from "../src/Pages/Gallery";
+import Contact from "../src/Pages/Contact";
+import About from "../src/Pages/About";
+import NotFound from "./Pages/NotFound";
+import Footer from "../src/components/Footer";
+import { Routes, Route } from "react-router-dom";
+import ProductCardDetail from "./Pages/ProductCardDetail";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+
+      <Routes>
+
+        <Route path="/" element={<Home />} />
+        <Route path="/products/:id" element={<ProductCardDetail />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
+    
+      </Routes>
+
+      {/* <Footer/> */}
+    </>
   );
 }
 
